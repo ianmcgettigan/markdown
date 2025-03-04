@@ -1,6 +1,10 @@
 # Convert markdown to pdf automatically and continuously using Skim and Pandoc.
 Convert `.md` files to `.pdf` automatically and continuously on file save using Skim pdf viewer (for me, but may be useful for others, too).
 
+Inspired by the way Vim-TeX automatically compiles `.tex` files and updates `.pdf` on save. This is much simpler as it only uses one
+command in the background, but it saves the hassle of manually running `pandoc file.md -o file.pdf` every time, and refreshing the pdf
+viewer every time.
+
 1. Add the following to your vimrc (go to vim and run `:edit $MYVIMRC`):
   ```bash
   autocmd BufWritePost *.md silent !pandoc % -o %:r.pdf
